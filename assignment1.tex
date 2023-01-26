@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+ \usepackage{graphicx}
+ \usepackage{titling}
+
+ \title{Data Mining - Assignment 1
+}
+\author{Parthivi Varshney}
+\date{January 2023 - Fall}
+ 
+ \usepackage{fancyhdr}
+\fancypagestyle{plain}{%  the preset of fancyhdr 
+    \fancyhf{} % clear all header and footer fields
+    \fancyhead[L]{\thedate}
+}
+\makeatletter
+\def\@maketitle{%
+  \newpage
+  \null
+  \vskip 1em%
+  \begin{center}%
+  \let \footnote \thanks
+    {\LARGE \@title \par}%
+    \vskip 1em%
+    %{\large \@date}%
+  \end{center}%
+  \par
+  \vskip 1em}
+\makeatother
+
+\usepackage{lipsum}  
+\usepackage{cmbright}
+
+\begin{document}
+
+\maketitle
+
+\noindent\begin{tabular}{@{}ll}
+    Student & \theauthor\\
+     Professor &  Karl Ni\\
+      Course &  Data Minig\\
+\end{tabular}
+
+\section*{Part 1}
+ Command to build Docker Image : \\
+ docker build -t assignment1 ./ \\
+ Output : \\
+ 
+ \includegraphics[scale=0.6]{BuildImg.png} \\
+ Command to run Docker Container : \\
+ docker run assignment1 \\
+ Output : (When the docker is run, the result displayed is of questions asked in Part 2 of the assignment)\\
+ 
+ \includegraphics[scale=0.7]{RunContainer.png}
+
+\section*{Part 2}
+ Question 2 : \[2^N -1\] \\
+
+\section*{Part 3}
+ Question 1 : \\
+ Total Movie Records : 17770 \\
+ \\
+ Question 2 : \\
+ The plot of star ratings over user and time depict that most movies are given an average rating of 3 and 4, while only a handful movies get rated 1.
+ Below are some plots to depict the same : \\
+ \includegraphics[scale=0.7]{Line.png} \\ 
+ \includegraphics[scale=0.7]{Hist.png} \\
+ \includegraphics[scale=0.7]{Scatter.png} \\ 
+\\
+ Question 3 : \\
+ Looking into Qualify.txt, we can see that most movies were watched by the user during the time period of 2000 to 2005. A total of 17470 movies were watched during this span. Calculating the percentage of movies watched during this span results in 98\% of movies getting more popular over time.\\
+\\
+ Question 4 : \\
+ Assuming the fact that a movie is re-released with the same name, there are about 401 movies that have been re-released.\\
+\\
+ Question 5 : \\
+ We can also try to extract in which year were the users more active, or in other word if the usage rate of the platform has gone up. Since the data is till year 2005, from the graph below it is clear that the rate of use has definitely gone up. \\
+ \includegraphics[scale=0.7]{YearBar.png} \\ 
+ \\
+ Question 6 : \\
+ One interesting problem that we can solve with this provided that is displaying every users all time favourite movie in their watch-list. Collection of user's favourite movies can also give us a list of all-time favourites.\\
+
+\end{document}
